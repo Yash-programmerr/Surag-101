@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+pydantic
+numpy
+pyproj
+pillow
+httpx
+pytest
+joblib
+scikit-learn
+rasterio
+torch
+torchvision
+torchange
+segment-anything

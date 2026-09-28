@@ -1,0 +1,445 @@
+:root {
+  color: #172033;
+  background: #f4f6f8;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.45;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+.button {
+  align-items: center;
+  background: #183153;
+  border: 0;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  min-height: 36px;
+  padding: 8px 12px;
+  text-decoration: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+button.secondary,
+.button.secondary {
+  background: #e7ecf2;
+  color: #172033;
+}
+
+button.danger {
+  background: #c62828;
+}
+
+.app-shell {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.topbar {
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #dfe5ec;
+  display: flex;
+  height: 68px;
+  justify-content: space-between;
+  padding: 10px 18px;
+}
+
+.topbar h1 {
+  font-size: 19px;
+  margin: 0;
+}
+
+.topbar p,
+.muted {
+  color: #687386;
+  margin: 4px 0 0;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 420px minmax(0, 1fr);
+  height: calc(100vh - 68px);
+}
+
+.side-panel {
+  background: #f9fafb;
+  border-right: 1px solid #dfe5ec;
+  overflow: auto;
+  padding: 14px;
+}
+
+.map-pane,
+.map {
+  min-height: 0;
+  height: 100%;
+}
+
+.tabs {
+  background: #e9eef5;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin-bottom: 12px;
+  padding: 4px;
+}
+
+.tabs button {
+  background: transparent;
+  color: #435064;
+  font-size: 13px;
+}
+
+.temporal-controls,
+.cluster-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.temporal-controls label,
+.cluster-controls label {
+  color: #435064;
+  display: grid;
+  font-size: 13px;
+  gap: 4px;
+}
+
+.discovery-list {
+  display: grid;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.discovery-list button {
+  align-items: flex-start;
+  background: #f3f6fa;
+  color: #172033;
+  display: grid;
+  justify-content: stretch;
+  min-height: 0;
+  text-align: left;
+}
+
+.discovery-list small {
+  color: #687386;
+}
+
+.cluster-group {
+  border-top: 1px solid #e4e9ef;
+  padding: 9px 0;
+}
+
+.cluster-group summary {
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.cluster-refresh {
+  align-items: center;
+  color: #435064;
+  display: flex;
+  font-size: 13px;
+  gap: 7px;
+}
+
+.cluster-refresh input {
+  min-height: 0;
+  width: auto;
+}
+
+.tabs button.active {
+  background: #fff;
+  color: #172033;
+}
+
+.searchbar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+input {
+  border: 1px solid #cfd7e2;
+  border-radius: 6px;
+  min-height: 36px;
+  padding: 7px 9px;
+  width: 100%;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 12px 0;
+}
+
+.chips button {
+  background: #edf2f7;
+  color: #263445;
+  min-height: 30px;
+  padding: 5px 9px;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #dfe5ec;
+  border-radius: 8px;
+  margin: 12px 0;
+  padding: 12px;
+}
+
+.panel h2 {
+  font-size: 15px;
+  margin: 0 0 10px;
+}
+
+.category-grid,
+.filter-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.category-grid label,
+.filter-grid label {
+  color: #435064;
+  display: grid;
+  font-size: 13px;
+  gap: 4px;
+}
+
+.category-grid label {
+  align-items: center;
+  display: flex;
+}
+
+.category-grid input {
+  min-height: 0;
+  width: auto;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.result-card {
+  background: #fbfcfe;
+  border: 1px solid #dfe5ec;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.result-card.selected,
+.aoi-row.selected {
+  border-color: #183153;
+  box-shadow: 0 0 0 2px rgba(24, 49, 83, 0.12);
+}
+
+.result-card img {
+  aspect-ratio: 1;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+.result-body {
+  padding: 8px;
+}
+
+.result-topline {
+  align-items: center;
+  color: #687386;
+  display: flex;
+  font-size: 12px;
+  justify-content: space-between;
+}
+
+.dot {
+  border-radius: 50%;
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+}
+
+dl {
+  margin: 0;
+}
+
+.result-card dl,
+.metadata {
+  display: grid;
+  gap: 5px;
+  margin-top: 8px;
+}
+
+.result-card dl div,
+.metadata div {
+  display: flex;
+  justify-content: space-between;
+}
+
+dt {
+  color: #687386;
+}
+
+dd {
+  margin: 0;
+}
+
+.link-button {
+  background: transparent;
+  color: #183153;
+  min-height: 28px;
+  padding: 2px 0;
+}
+
+.detail-panel img,
+.change-panel img {
+  border-radius: 6px;
+  max-width: 100%;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.error {
+  background: #ffebee;
+  border-radius: 6px;
+  color: #b71c1c;
+  padding: 8px;
+}
+
+.warning {
+  background: #fff8e1;
+  border-radius: 6px;
+  color: #8a5a00;
+  padding: 8px;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 12px;
+  width: 100%;
+}
+
+th,
+td {
+  border-bottom: 1px solid #edf1f5;
+  padding: 6px;
+  text-align: left;
+}
+
+.legend div {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  margin-top: 7px;
+}
+
+.legend span {
+  border-radius: 3px;
+  display: inline-block;
+  height: 14px;
+  width: 22px;
+}
+
+.draw-actions {
+  margin-top: 70px;
+}
+
+.draw-actions .leaflet-control {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  display: flex;
+  gap: 6px;
+  padding: 6px;
+}
+
+.aoi-results {
+  display: grid;
+  gap: 10px;
+}
+
+.aoi-row {
+  border: 1px solid #dfe5ec;
+  border-radius: 8px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 10px;
+  padding: 8px;
+}
+
+.aoi-row img {
+  aspect-ratio: 1;
+  border-radius: 6px;
+  object-fit: cover;
+  width: 84px;
+}
+
+.aoi-row p {
+  margin: 4px 0 8px;
+}
+
+.reviewer {
+  color: #435064;
+  display: grid;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 800px) {
+  .app-shell {
+    height: auto;
+    overflow: visible;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .side-panel {
+    border-right: 0;
+    max-height: none;
+  }
+
+  .map-pane {
+    height: 70vh;
+  }
+
+  .tabs button {
+    font-size: 11px;
+    padding-inline: 4px;
+  }
+}

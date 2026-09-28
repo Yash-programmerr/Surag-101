@@ -1,0 +1,36 @@
+node_modules/
+
+
+dist/
+build/
+.next/
+
+india_tiles/
+india_tiles.zip
+india_tiles.tar.gz
+india_tiles_timeline/
+
+coverage/
+.vscode/
+.idea/
+
+
+
+# Python virtual environment
+.venv/
+.venv-ml/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Python virtual environment
+.venv/
+.venv-ml/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
